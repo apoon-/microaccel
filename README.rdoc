@@ -1,28 +1,72 @@
 == README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+User Stories
 
-Things you may want to cover:
+Below are the main user stories for this project. There are way too many stories to implement in a week, so your fist job is to read through all the stories, prioritize them and determine what functionality you feel can be implemented in the time given that will create a working application that people can use.
 
-* Ruby version
+Project Owner
 
-* System dependencies
+I want to be able to create a new project with a title and a description
+I want to set a goal for my project
+I want to set a funding period (start, finish) for my project
+I want the ability to set funding breakpoints with a description of what backers will receive for each breakpoint
+I want to see how many people have funded at each breakpoint
+I want to see the total amount of money raised as of right now
+I want to see how many days are left before my project is done
+I want to have some method of emailing backers individually
+I want to have some method of emailing all of my backers as a group
+I want the ability to add updates my project
+I want the ability to notify people that I have added an update
+I want to have a bio section where people can look me up and see all the projects I have created
+I would like the ability to set limits on how many people can fund at certain breakpoints
+I want the ability to create my project and not have it publicly visible
+I want the ability to set the date and time when my project goes public
+To help people find my project, I want the ability to add it to a category
+To help people find my project, I want the ability to add various tags to my project
+I want the ability to cancel my project before it meets its funding deadline
+Backer
 
-* Configuration
+I want to be able to back a project at a certain breakpoint
+I want to see all of the projects that I have backed
+I want to see the total amount of money I have spent on projects
+I want to be notified if any of the projects I am backing are updated
+I want to be notified if any of the projects I am backing fail to me their goal
+I want to be notified when any projects I am backing meet their goal and are fully funded
+When viewing a project, it should be very clear whether I have backed the project or not
+I want to be able to leave comments on a project
+I want the ability to leave comments on a project owner
+I want to be able to see all projects in a particular category
+I want the ability to search for projects using various tags
+I want to see the most popular open projects in a category
+I want to see the most popular open projects for a particular tag
+I want to see who the owner of a project is
+I want to see the face of the project owner
+I want the ability to ask questions directly to the project owner
+I want the ability to report a project that is fraudulent
+I want the ability to report a project owner who has not followed through with their breakpoint promises
+I should not have to sign up/in to the site until I decide to back a project
+I want to see all updates that a project creator has added to a project
+General
 
-* Database creation
+I would like to see how many projects have been successfully funded
+I would like to see how many total people have funded projects
+I would like to see how many projects have been funded in a particular category
+I would like to see how much money has been raised in total
+I would like to see how much money has been raised for a particular category
+I would like to see the percentage of funded versus failed projects
+I want the ability to sign in/up with Crowdfunder using my gmail or Facebook account
+Site
 
-* Database initialization
+A project only expires when it hits its funding deadline, not its funding goal
+A project owner can only delete a project if it has not raised any money
+Projects should be able to accept funding beyond its funding goal
+JavaScript/AJAX
 
-* How to run the test suite
+Listed below are some of the areas of the application in which JavaScript and/or AJAX should be used. Feel free to use JS in other areas of your application if you feel that it would be useful (or fun).
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
+When a backer funds a project, there should be a nice highlighted flash message that appears at the top of the screen and fades out after 20 seconds or so
+backing a project should be AJAX and not require a page refresh
+Leaving a comment for a project should involve AJAX
+After someone backs a project, the metrics (how many backers there are, how many backers at the breakpoints, etc) should update without needing a page refresh
+listing of comments, and backers, should use infinite scrolling instead of paging
+When searching for a project by name, the app should use autocomplete/typeahead
