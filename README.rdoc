@@ -70,10 +70,10 @@ SITE
 3.  Projects should be able to accept funding beyond its funding goal
  
 MVP
-1.  I want to be able to create a new project with a title and a description 
-2.  I want to set a goal for my project
-3.  I want to set a funding period (start, finish) for my project
+1.  I want to be able to create a new project with a title and a description - DONE
+2.  I want to set a goal for my project - DONE
+3.  I want to set a funding period (start, finish) for my project - DONE
 4.  I want to see the total amount of money raised as of right now
-5.  I want to see how many days are left before my project is done
+5.  I want to see how many days are left before my project is done 
 
 + user models without roles

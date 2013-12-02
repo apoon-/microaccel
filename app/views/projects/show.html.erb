@@ -1,2 +1,9 @@
-<h1>Projects#show</h1>
-<p>Find me in app/views/projects/show.html.erb</p>
+<%= link_to "Back to All Projects", projects_path %>
+<%= link_to "Edit This Project", edit_project_path %>
+
+</br><h2><%= @project.title %></h2></br>
+<%= @project.description %></br>
+<%= @project.user_id %></br>
+$<%= @project.goal_in_cents * 100 %>.00</br>
+<%= @project.start_date %></br>
+<%= @project.end_date %></br>

@@ -1,2 +1,12 @@
-<h1>Projects#index</h1>
-<p>Find me in app/views/projects/index.html.erb</p>
+<h1><strong>Micro</strong>Accel</h1>
+
+<%= link_to "+ Add New Projects", new_project_url %>
+
+<% @projects.each do |project| %>
+  </br><h2><%= link_to project.title, project_url(project) %></h2></br>
+  <%= project.description %></br>
+  <%= project.user_id %></br>
+  $<%= project.goal_in_cents * 100 %>.00</br>
+  <%= project.start_date %></br>
+  <%= project.end_date %></br>
+<% end %>
