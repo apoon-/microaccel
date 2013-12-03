@@ -17,6 +17,8 @@ gem 'jquery-rails', '3.0.4'
 gem 'turbolinks', '1.1.1'
 gem 'jbuilder', '1.0.2'
 gem 'foundation-rails'
+gem 'sorcery'
+gem 'carrierwave'
 # http://foundation.zurb.com/docs/rails.html
 # Run rails g foundation:install after bundle install to configure.
 

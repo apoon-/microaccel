@@ -4,6 +4,7 @@
 
 <% @projects.each do |project| %>
   </br><h2><%= link_to project.title, project_url(project) %></h2></br>
+  <%= image_tag project.photo %></br>
   <%= project.description %></br>
   <%= project.user_id %></br>
   $<%= project.goal_in_cents * 100 %>.00</br>
