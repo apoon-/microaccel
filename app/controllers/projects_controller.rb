@@ -9,6 +9,8 @@ class ProjectsController < ApplicationController
 
   def show
     @project = Project.find(params[:id])
+    remaining_date
+
   end
 
   def edit
@@ -39,6 +41,10 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     @project.destroy
     redirect_to projects_url
+  end
+
+  def remaining_date
+    @days_left = (@project.end_date - @project.start_date).to_i
   end
 
   private
