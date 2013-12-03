@@ -10,6 +10,7 @@ class ProjectsController < ApplicationController
   def show
     @project = Project.find(params[:id])
     remaining_date
+    pledges_so_far
 
     if current_user
       @pledge = @project.pledges.build
@@ -48,6 +49,15 @@ class ProjectsController < ApplicationController
 
   def remaining_date
     @days_left = (@project.end_date - @project.start_date).to_i
+  end
+
+  def pledges_so_far
+    @total = 0;
+
+    @totalpledges = Project.find(params[:id]).pledges
+    @totalpledges.each do |t|
+      @total += t.amount_in_cents
+    end
   end
 
   private

@@ -5,10 +5,12 @@
 <%= image_tag @project.photo %></br>
 <%= @project.description %></br>
 <%= @project.user_id %></br>
-$<%= @project.goal_in_cents * 100 %>.00</br>
+$<%= (@project.goal_in_cents.to_f / 100) %></br>
 Start Date: <%= @project.start_date %></br>
 End Date: <%= @project.end_date %></br>
-<%= @days_left %> Days Left
+<%= @days_left %> Days Left</br>
+<%= @total.to_f / 100 %>
+<%= @totalpledges %>
 
 <% if current_user %>
 
@@ -19,7 +21,7 @@ End Date: <%= @project.end_date %></br>
   <% @project.pledges.each do |pledge| %>
     <% if pledge.user !=nil %>
       Contributor: <%= pledge.user.username %></br>
-      $<%= pledge.amount_in_cents * 100 %>.00</br>
+      $<%= (pledge.amount_in_cents.to_f / 100) %></br>
       <%= pledge.created_at %></br>
     <% end %>
   <% end %>
