@@ -1,2 +1,29 @@
 <h1> So You Want to Pledge to <strong><%= @project.title %></strong>, eh? </h1>
 
+<% if current_user %>
+
+<%= form_for([@project, @pledge]) do |f| %>
+  <% if @pledge.errors.any? %>
+      <div id="error_explanation">
+        <h2><%= pluralize(@review.errors.count, "error") %> prohibited this review from being saved:</h2>
+
+        <ul>
+        <% @review.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    <% end %>
+
+    <div class="field">
+      <%= f.label "Amount to Pledge" %>
+      <%= f.number_field :amount_in_cents %>
+    </div>
+    <div class="actions">
+      <%= f.submit %>
+    </div>
+  <% end %>
+
+  <% else %>
+  <p>Please <%= link_to "Log In", new_session_path %> to pledge.</p>
+  <% end %>

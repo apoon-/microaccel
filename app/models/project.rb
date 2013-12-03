@@ -7,4 +7,6 @@ class Project < ActiveRecord::Base
   has_many :discussions
   has_many :users, :through => :discussions
 
+  has_many :pledges
+
 end

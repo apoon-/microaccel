@@ -14,13 +14,13 @@ End Date: <%= @project.end_date %></br>
 
   <h3> Pledges </h3>
 
-  <p> Pledges for <%= @project.name %></p>
+  <p> Pledges for <%= @project.title %></p>
 
   <% @project.pledges.each do |pledge| %>
     <% if pledge.user !=nil %>
-      <%= pledge.user.username %>
-      <%= pledge.amount_in_cents %>
-      <%= pledge.created_at %>
+      Contributor: <%= pledge.user.username %></br>
+      $<%= pledge.amount_in_cents * 100 %>.00</br>
+      <%= pledge.created_at %></br>
     <% end %>
   <% end %>
 <% end %>
