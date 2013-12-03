@@ -1,4 +1,4 @@
-<%= link_to "Back to All Projects", projects_path %>
+<%= link_to "Back to All Projects", projects_path %> | 
 <%= link_to "Edit The Project", edit_project_path %>
 
 </br><h2><%= @project.title %></h2></br>
@@ -9,3 +9,20 @@ $<%= @project.goal_in_cents * 100 %>.00</br>
 Start Date: <%= @project.start_date %></br>
 End Date: <%= @project.end_date %></br>
 <%= @days_left %> Days Left
+
+<% if current_user %>
+
+  <h3> Pledges </h3>
+
+  <p> Pledges for <%= @project.name %></p>
+
+  <% @project.pledges.each do |pledge| %>
+    <% if pledge.user !=nil %>
+      <%= pledge.user.username %>
+      <%= pledge.amount_in_cents %>
+      <%= pledge.created_at %>
+    <% end %>
+  <% end %>
+<% end %>
+
+<%= link_to "Add a pledge!", new_project_pledge_url(@project) %>

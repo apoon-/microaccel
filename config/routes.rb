@@ -1,8 +1,25 @@
 Microaccel::Application.routes.draw do
+  get "discussions/index"
+  get "discussions/create"
+  get "discussions/new"
+  get "discussions/show"
+  get "discussions/edit"
+  get "discussions/update"
+  get "discussions/destroy"
+  get "pledges/index"
+  get "pledges/create"
+  get "pledges/new"
+  get "pledges/show"
+  get "pledges/destroy"
 get "logout" => "sessions#destroy", :as => "logout"
 get "login" => "sessions#new", :as => "login"
 get "signup" => "users#new", :as => "signup"
-resources :projects
+
+resources :projects do
+  resources :discussions, :except => [:index]
+  resources :pledges
+end
+
 resources :users
 resources :sessions
 

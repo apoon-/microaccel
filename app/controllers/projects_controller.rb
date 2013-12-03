@@ -11,6 +11,9 @@ class ProjectsController < ApplicationController
     @project = Project.find(params[:id])
     remaining_date
 
+    if current_user
+      @pledge = @project.pledges.build
+    end
   end
 
   def edit
