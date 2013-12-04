@@ -9,12 +9,11 @@ $<%= (@project.goal_in_cents.to_f / 100) %></br>
 Start Date: <%= @project.start_date %></br>
 End Date: <%= @project.end_date %></br>
 <%= @days_left %> Days Left</br>
-Pledges so far: $<%= @total.to_f / 100 %>
+Pledges so far: $<%= @total.to_f / 100 %></br></br>
 
 <% if current_user %>
   <h3> Pledges </h3>
   <p> Pledges for <%= @project.title %></p>
-
   <% @project.pledges.each do |pledge| %>
     <% if pledge.user !=nil %>
       Contributor: <%= pledge.user.username %></br>
@@ -22,12 +21,36 @@ Pledges so far: $<%= @total.to_f / 100 %>
       <%= pledge.created_at %></br>
     <% end %>
   <% end %>
-<% end %>
 </br>
-
 <a href="#" data-reveal-id="pledgeModal" class="radius button">I Want to Pledge!</a>
 
 <div id="pledgeModal" class="reveal-modal" data-reveal>
   <%= render "pledgeform" %>
 <a class="close-reveal-modal">&#215;</a>
 </div>
+
+<% end %>
+</br>
+
+  <h3> Comments </h3>
+  <p> Comments for <%= @project.title %></p>
+  <% @project.discussions.each do |d| %>
+    <% if d.user !=nil %>
+      Contributor: <%= d.user.username %></br>
+      <%= d.comment %></br>
+      <%= d.created_at %></br>
+    <% end %>
+  <% end %>
+
+  <a href="#" data-reveal-id="commentModal" class="radius button">I Want to Pledge!</a>
+
+<div id="commentModal" class="reveal-modal" data-reveal>
+  <%= render "pledgeform" %>
+<a class="close-reveal-modal">&#215;</a>
+</div>
+
+
+
+
+
+<%= link_to "Add a Comment", new_project_discussion_url(@project) %>

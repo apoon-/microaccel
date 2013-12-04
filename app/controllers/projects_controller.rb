@@ -14,6 +14,7 @@ class ProjectsController < ApplicationController
 
     if current_user
       @pledge = @project.pledges.build
+      @discussion = @project.discussions.build
     end
   end
 

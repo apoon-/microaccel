@@ -1,5 +1,7 @@
 class DiscussionsController < ApplicationController
-def index
+  before_filter :load_project
+
+  def index
     @discussions = Discussion.all
   end
 
@@ -18,10 +20,11 @@ def index
   end
 
   def create
-    @discussion = Discussion.new(discussion_params)
+    @discussion = @project.discussions.build(discussion_params)
+    @discussion.user_id = current_user.id
 
     if @discussion.save
-      redirect_to discussions_url
+      redirect_to projects_path, notice: "Discussion Successful"
     else
       render :new
     end
@@ -47,5 +50,9 @@ def index
 
   def discussion_params
     params.require(:discussion).permit(:project_id, :user_id, :comment)
+  end
+
+  def load_project
+    @project = Project.find(params[:project_id])
   end
 end
