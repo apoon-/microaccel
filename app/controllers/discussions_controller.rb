@@ -24,7 +24,7 @@ class DiscussionsController < ApplicationController
     @discussion.user_id = current_user.id
 
     if @discussion.save
-      redirect_to projects_path, notice: "Discussion Successful"
+      redirect_to project_path(@project), notice: "Discussion Successful"
     else
       render :new
     end

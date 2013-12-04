@@ -1,4 +1,4 @@
-begin
+ndbegin
   require File.join(File.dirname(__FILE__), 'lib', 'sass') # From here
 rescue LoadError
   begin

@@ -19,7 +19,7 @@ class PledgesController < ApplicationController
     @pledge.user_id = current_user.id
 
     if @pledge.save
-      redirect_to projects_path, notice: "Pledge Successful"
+      redirect_to project_path(@project), notice: "Discussion Successful"
     else
       render :new
     end

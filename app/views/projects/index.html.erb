@@ -7,6 +7,12 @@
   <%= project.description %></br>
   <%= project.user_id %></br>
   $<%= project.goal_in_cents.to_f / 100 %></br>
-  <%= (project.end_date - project.start_date).to_i %> Days Left
-<% end %>
+  <%= (project.end_date - project.start_date).to_i %> Days Left</br>
+  Amount Raised So Far: $<%= (project.pledges.sum(:amount_in_cents).to_f) /100 %></br>
+  Funded: <%= (project.pledges.sum(:amount_in_cents).to_f/project.goal_in_cents.to_f) *100 %>%
+  
+  <div class="progress large-9 success round">
+      <span class="meter" style="width:<%= (project.pledges.sum(:amount_in_cents).to_f/project.goal_in_cents.to_f) *100 %>%"></span>
+  </div>
 
+<% end %>
