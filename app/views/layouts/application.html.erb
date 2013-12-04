@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title><%= content_for?(:title) ? yield(:title) : "foundation-rails" %></title>
+    <title><%= content_for?(:title) ? yield(:title) : "MicroAccel" %></title>
 
     <%= stylesheet_link_tag    "application" %>
     <%= javascript_include_tag "vendor/modernizr" %>
@@ -13,14 +13,13 @@
 
   <body>
   <!-- Navigation -->
- <div class="contain-to-grid fixed">
+ <div class="contain-to-grid">
   <nav class="top-bar" data-topbar>
     <ul class="title-area">
       <!-- Title Area -->
       <li class="name">
         <h1>
-          <a href="#">MicroAccel
-          </a>
+          <%= link_to "MicroAccel", projects_path %>
         </h1>
       </li>
       <li class="toggle-topbar menu-icon"><a href="#"><span>menu</span></a></li>
@@ -30,16 +29,17 @@
       <!-- Right Nav Section -->
       <ul class="right">
         <% if current_user %>
-        <li class="divider"></li>
-        <li><%= link_to current_user.email %></li>
-        <li class="divider"></li>
-        <li><%= link_to "Log out", logout_path %></li>
-        <% else %>
-        <li class="divider"></li>
-        <li><%= link_to "Sign up", signup_path %></li>
-        <li class="divider"></li>
-        <li><%= link_to "log in", login_path %></li>
-        <li class="divider"></li>
+          <li class="divider"></li>
+          <li><%= link_to current_user.email %></li>
+          <li class="divider"></li>
+          <li><%= link_to "Log out", logout_path %></li>
+          <li class="divider"></li>
+          <% else %>
+          <li class="divider"></li>
+          <li><%= link_to "Sign up", signup_path %></li>
+          <li class="divider"></li>
+          <li><%= link_to "log in", login_path %></li>
+          <li class="divider"></li>
         <% end %>
       </ul>
     </section>
@@ -49,6 +49,7 @@
   <!-- End Top Bar -->
 
     <div class="row">
+      <br/>
       <%= yield %>
     </div>
     <%= javascript_include_tag "application" %>

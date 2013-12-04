@@ -52,7 +52,7 @@ class ProjectsController < ApplicationController
   end
 
   def pledges_so_far
-    @total = 0;
+    @total = 0
 
     @totalpledges = Project.find(params[:id]).pledges
     @totalpledges.each do |t|

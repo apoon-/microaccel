@@ -3,10 +3,10 @@
 
 <% @projects.each do |project| %>
   </br><h2><%= link_to project.title, project_url(project) %></h2></br>
-  <%= image_tag project.photo %></br>
+  <div class="showcaseimg"><%= image_tag project.photo %></br></div>
   <%= project.description %></br>
   <%= project.user_id %></br>
-  $<%= project.goal_in_cents * 100 %>.00</br>
-  <%= project.start_date %></br>
-  <%= project.end_date %></br>
+  $<%= project.goal_in_cents.to_f / 100 %></br>
+  <%= (project.end_date - project.start_date).to_i %> Days Left
 <% end %>
+

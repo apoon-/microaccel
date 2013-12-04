@@ -13,3 +13,7 @@
 
  *= require_tree .
  */
+
+.showcaseimg img {
+  max-width: 500px;
+}
