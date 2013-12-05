@@ -1,14 +1,13 @@
 <h1><%= @user.username %></h1>
-<%= @user.email %>
+<%= @user.email %></br></br>
 
-<h1>Your Projects</h1>
+<h3>Your Projects</h3>
 <% @userprojects.each do |p| %>
   <%= p.title %></br>
-<% end %>
+<% end %></br>
 
-<h1>Your Pledges</h1>
-
+<h3>Your Pledges</h3>
 <% @user.pledges.each do |p| %>
-  <%= Project.find_by_id(p.id).title unless Project.find_by_id(p.id) == nil%>
+  <%= Project.find_by_id(p.id).title unless Project.find_by_id(p.id) == nil%></br>
 <% end %>
 
