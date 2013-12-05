@@ -15,4 +15,7 @@
   <div class="progress small-9 success round">
     <span class="meter" style="width:<%= percentagechecker(project) %>%"></span>
   </div>
+
+  Categories: <%= raw project.tag_list.map { |t| link_to t, tag_path(t) }.join(', ') %>
+
 <% end %>

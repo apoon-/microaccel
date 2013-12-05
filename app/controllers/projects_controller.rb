@@ -1,7 +1,11 @@
 class ProjectsController < ApplicationController
   def index
-    @projects = Project.all
     @subtotal = 0
+    if params[:tag]
+      @projects = Project.tagged_with(params[:tag])
+    else
+      @projects = Project.all
+    end
   end
 
   def new
@@ -68,7 +72,7 @@ class ProjectsController < ApplicationController
   private
 
   def project_params
-    params.require(:project).permit(:title, :description, :user_id, :goal_in_cents, :photo, :start_date, :end_date)
+    params.require(:project).permit(:title, :description, :user_id, :goal_in_cents, :photo, :start_date, :end_date, :tag_list)
   end
 
 end

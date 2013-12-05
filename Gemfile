@@ -19,6 +19,7 @@ gem 'jbuilder', '1.0.2'
 gem 'foundation-rails'
 gem 'sorcery'
 gem 'carrierwave'
+gem 'acts-as-taggable-on'
 # http://foundation.zurb.com/docs/rails.html
 # Run rails g foundation:install after bundle install to configure.
 
