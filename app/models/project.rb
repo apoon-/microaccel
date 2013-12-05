@@ -1,12 +1,12 @@
 class Project < ActiveRecord::Base
   mount_uploader :photo, PhotoUploader
 
-  belongs_to :user
-  has_many :users, :through => :pledges
-
-  has_many :discussions
-  has_many :users, :through => :discussions
+  belongs_to :owner, foreign_key: "user_id"
 
   has_many :pledges
+
+  has_many :sponsors, through: :pledges, class_name: "User"
+
+  has_many :discussions
 
 end

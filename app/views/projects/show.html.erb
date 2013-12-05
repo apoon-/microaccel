@@ -1,7 +1,7 @@
 <% if current_user != nil %>
   <% if session[:user_id] == @project.user_id %>
     <h3><%= current_user.username %>'s Owner Console</h3>
-    <%= link_to "Edit This Project", edit_project_path, {:class => "button"} %> | 
+    <%= link_to "Edit This Project", edit_project_path %> | 
     <%= link_to "Delete This Project", @project, method: :delete, data: {confirm: 'Are you sure?'} %>
   <% end %>
 <% end %>
