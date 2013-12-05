@@ -44,7 +44,8 @@ ActiveRecord::Schema.define(version: 20131203174512) do
     t.string   "photo"
   end
 
-  create_table "users", force: true do |t|
+  create_table "users", force: tru
+  e do |t|
     t.string   "username",         null: false
     t.string   "email"
     t.string   "crypted_password"

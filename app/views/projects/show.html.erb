@@ -1,11 +1,15 @@
-<%= link_to "Back to All Projects", projects_path %> | 
-<%= link_to "Edit The Project", edit_project_path %>
+<% if current_user != nil %>
+  <% if session[:user_id] == @project.user_id %>
+    <h3><%= current_user.username %>'s Owner Console</h3>
+    <%= link_to "Edit This Project", edit_project_path, {:class => "button"} %> | 
+    <%= link_to "Delete This Project", @project, method: :delete, data: {confirm: 'Are you sure?'} %>
+  <% end %>
+<% end %>
 
-</br><h2><%= @project.title %></h2></br>
+<h2><%= @project.title %></h2></br>
 <%= image_tag @project.photo %></br></br>
 <%= @project.description %></br>
-<%= @project.user_id %></br>
-$<%= (@project.goal_in_cents.to_f / 100) %></br>
+Goal: $<%= (@project.goal_in_cents.to_f / 100) %></br>
 Start Date: <%= @project.start_date %></br>
 End Date: <%= @project.end_date %></br>
 <%= @days_left %> Days Left</br>
