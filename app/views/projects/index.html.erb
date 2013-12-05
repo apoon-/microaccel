@@ -13,7 +13,6 @@
   Funded: <%= ((project.pledges.sum(:amount_in_cents).to_f/project.goal_in_cents.to_f) *100).round %>%
   
   <div class="progress small-9 success round">
-    <span class="meter" style="width:<%= (project.pledges.sum(:amount_in_cents).to_f/project.goal_in_cents.to_f) *100 %>%"></span>
+    <span class="meter" style="width:<%= percentagechecker(project) %>%"></span>
   </div>
-
 <% end %>
