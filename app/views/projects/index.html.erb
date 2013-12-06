@@ -5,6 +5,11 @@
   <%= link_to "+ Add New Projects", new_project_url, {:class => "button"} %></br>
 <% end %>
 
+<%= form_tag("/search", method: "get") do %>
+  <%= text_field_tag :s, nil, :placeholder => "Search" %>
+  <%= submit_tag("search") %>
+<% end %>
+
 <% @projects.each do |project| %>
   <h2><%= link_to project.title, project_url(project) %></h2>
   <div class="showcaseimg"><%= link_to (image_tag project.photo), project_url(project) %></br></br></div>

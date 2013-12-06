@@ -66,7 +66,10 @@ class ProjectsController < ApplicationController
     # end
 
     @total = @project.pledges.sum(:amount_in_cents) 
+  end
 
+  def search
+    @result = Project.where("title LIKE '%#{params[:s]}%'")
   end
 
   private
