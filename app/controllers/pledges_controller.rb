@@ -18,11 +18,16 @@ class PledgesController < ApplicationController
     @pledge = @project.pledges.build(pledge_params)
     @pledge.user_id = current_user.id
 
-    if @pledge.save
-      redirect_to project_path(@project), notice: "Discussion Successful"
-    else
-      render :new
+    respond_to do |format|
+      if @pledge.save
+        format.html { redirect_to project_path(@project.id), notice: 'Pledge added.' }
+        format.js {} 
+      else
+        format.html { render 'projects/show', alert: 'There was an error.'  }
+        format.js {}
+      end
     end
+
   end
 
   def destroy

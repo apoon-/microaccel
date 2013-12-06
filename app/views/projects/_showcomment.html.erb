@@ -1,0 +1,8 @@
+<p> Comments for <%= @project.title %></p>
+<% @project.discussions.each do |d| %>
+  <% if d.user !=nil %>
+    Contributor: <%= d.user.username %></br>
+    <%= d.comment %></br>
+    <%= d.created_at %></br>
+  <% end %>
+<% end %>

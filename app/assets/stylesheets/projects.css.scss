@@ -1,3 +1,38 @@
 // Place all the styles related to the projects controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.row {
+  min-width: 100% !important;
+}
+
+#showcase {
+  height: 540px;
+  background-image: url('http://d297h9he240fqh.cloudfront.net/assets/compass/site/hero-03-3c41ed7d9ae767d792c64149d7db8e3a.jpg');
+  -webkit-background-size: auto auto;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+#fill {
+  position: absolute;
+  height: 556px !important;
+  top: 0;
+  z-index: -1;
+}
+
+.leftfill {
+  display: block;
+  background-color: #f7f7f7;
+  height: 100%;
+  width: 50%;
+  float: left;
+}
+
+.rightfill {
+  display: block;
+  background-color: #081304;
+  height: 100%;
+  width: 50%;
+  float: right;
+}

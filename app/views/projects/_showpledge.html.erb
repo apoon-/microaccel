@@ -1,0 +1,8 @@
+<p> Pledges for <%= @project.title %></p>
+<% @project.pledges.each do |pledge| %>
+  <% if pledge.user !=nil %>
+    Contributor: <%= pledge.user.username %></br>
+    $<%= (pledge.amount_in_cents.to_f / 100) %></br>
+    <%= pledge.created_at %></br>
+  <% end %>
+<% end %>

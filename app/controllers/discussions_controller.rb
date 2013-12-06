@@ -23,10 +23,14 @@ class DiscussionsController < ApplicationController
     @discussion = @project.discussions.build(discussion_params)
     @discussion.user_id = current_user.id
 
-    if @discussion.save
-      redirect_to project_path(@project), notice: "Discussion Successful"
-    else
-      render :new
+    respond_to do |format|
+      if @discussion.save
+        format.html { redirect_to project_path(@project.id), notice: 'Comment added.' }
+        format.js {} 
+      else
+        format.html { render 'projects/show', alert: 'There was an error.'  }
+        format.js {} 
+      end    
     end
   end
 
