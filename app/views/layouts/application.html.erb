@@ -30,28 +30,21 @@
       <!-- Right Nav Section -->
       <ul class="right">
         <% if current_user %>
-          <li class="divider"></li>
           <li class="active">
             <%= link_to current_user.email, user_path(current_user.id) %>
           </li>
           <li class="divider"></li>
           <li>
-            <%= link_to "Log Out", logout_path %>
+            <%= link_to "LOG OUT", logout_path %>
           </li>
           <li class="divider"></li>
         <% else %>
-          <li class="divider"></li>
+          <li class="inactive">
+            <%= link_to "LOG IN", login_path %>
+          </li>
           <li class="active">
-            <%= link_to "Sign up", signup_path %>
+            <%= link_to "SIGN UP", signup_path %>
           </li>
-          <li>
-            <%= link_to "Login with Facebook", auth_at_provider_path(:provider => :facebook) %>
-          </li>
-          <li class="divider"></li>
-          <li>
-            <%= link_to "Log In", login_path %>
-          </li>
-          <li class="divider"></li>
         <% end %>
       </ul>
     </section>
@@ -61,14 +54,16 @@
  
   <!-- End Top Bar -->
 
-  <div class="row">
-    <div class="small-11 small-centered columns">
+
+      <br/>
+      <br/>
+      <br/>
+      <br/>
       <br/>
       <br/>
       <br/>
       <%= yield %>
-    </div>
-  </div>
+
     <%= javascript_include_tag "application" %>
   </body>
 </html>

@@ -17,3 +17,30 @@
 .showcaseimg img {
   max-width: 500px;
 }
+
+.contain-to-grid {
+  border-bottom: 2px solid white;
+}
+
+.top-bar {
+  background: transparent !important;
+}
+
+.top-bar-section li.inactive a:not(.button) {
+  background: transparent !important;
+}
+
+.contain-to-grid:hover {
+  background-color: rgba(0,0,0,0.9); 
+}
+
+.right .inactive {
+  background: transparent !important;
+}
+
+.right .active a{
+  border: 1px solid #00BAD8;
+  padding: 10px !important;
+  line-height: 10px !important;
+  margin: 20px 0 0 0;
+}

@@ -38,7 +38,7 @@
 // $body-bg: #fff;
 // $body-font-color: #222;
 // $body-font-family: "Helvetica Neue", "Helvetica", Helvetica, Arial, sans-serif;
-// $body-font-weight: normal;
+$body-font-weight: 300;
 // $body-font-style: normal;
 
 // We use this to control font-smoothing
@@ -928,22 +928,22 @@
 
 // Background color for the top bar
 // $topbar-bg-color: #333;
-// $topbar-bg: $topbar-bg-color;
+$topbar-bg: rgba(0, 0, 0, 0.6);
 
 // Height and margin
-// $topbar-height: 45px;
+$topbar-height: 70px;
 // $topbar-margin-bottom: 0;
 
 // Control Input height for top bar
 
 // Controlling the styles for the title in the top bar
-// $topbar-title-weight: normal;
-// $topbar-title-font-size: rem-calc(17);
+$topbar-title-weight: 100;
+$topbar-title-font-size: rem-calc(30);
 
 // Style the top bar dropdown elements
-// $topbar-dropdown-bg: #333;
+$topbar-dropdown-bg: transparent;
 // $topbar-dropdown-link-color: #fff;
-// $topbar-dropdown-link-bg: #333;
+$topbar-dropdown-link-bg: transparent;
 // $topbar-dropdown-toggle-size: 5px;
 // $topbar-dropdown-toggle-color: #fff;
 // $topbar-dropdown-toggle-alpha: 0.4;
@@ -956,9 +956,9 @@
 // $topbar-link-font-size: rem-calc(13);
 // $topbar-link-hover-lightness: -10%; // Darken by 10%
 // $topbar-link-bg-hover: #272727  ;
-// $topbar-link-bg-active: $primary-color;
+$topbar-link-bg-active: black;
 // $topbar-link-bg-active-hover: darken($primary-color, 5%);
-// $topbar-link-font-family: $body-font-family;
+$topbar-link-font-family: "Open Sans";
 
 // $topbar-button-font-size: 0.75rem;
 

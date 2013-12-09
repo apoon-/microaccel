@@ -2,16 +2,15 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.row {
-  min-width: 100% !important;
-}
-
 #showcase {
-  height: 540px;
-  background-image: url('http://d297h9he240fqh.cloudfront.net/assets/compass/site/hero-03-3c41ed7d9ae767d792c64149d7db8e3a.jpg');
-  -webkit-background-size: auto auto;
+  height: 580px;
+  margin-top: -130px;
+  background-image: url('/uploads/project/photo/5/fog_toronto.jpg');
+  -webkit-background-size: 100% auto;
   background-repeat: no-repeat;
   background-position: center top;
+  width: 100% !important;
+  max-width: 100% !important;
 }
 
 #fill {
@@ -35,4 +34,50 @@
   height: 100%;
   width: 50%;
   float: right;
+}
+
+.search {
+  position: absolute;
+  width: 30em;
+  top: 8%;
+  left: 55%;
+  margin: 0 auto;
+}
+
+.search #s {
+  background-color: transparent !important;
+  border: 2px solid white;
+  font-family: "Open Sans";
+  font-weight: 100;
+  box-shadow: none;
+}
+
+.search input[type="submit"] {
+  position: absolute;
+  top: -5%;
+  left: 85%;
+  background-color: #00BAD8;
+  border: 2px solid #00BAD8;
+  color: white;
+  padding: 5px 30px;
+  font-family: "Open Sans";
+  font-size: 1.1em;
+  font-weight: 100;
+}
+
+.search input[type="submit"]:hover {
+  background-color: darken(#00BAD8, 10%) !important;
+  border: 2px solid darken(#00BAD8, 10%) !important;
+}
+
+.showcaseimg img {
+  max-width: 100% !important;
+}
+
+.panel {
+  border-top: 3px solid #00BAD8;
+}
+
+.panel a {
+  color: #00BAD8;
 }
