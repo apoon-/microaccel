@@ -1,5 +1,11 @@
 Microaccel::Application.routes.draw do
 
+root 'projects#index'
+
+post "oauth/callback" => "oauths#callback"
+get "oauth/callback" => "oauths#callback"
+get "oauth/:provider" => "oauths#oauth", :as => :auth_at_provider
+
 get "logout" => "sessions#destroy", :as => "logout"
 get "login" => "sessions#new", :as => "login"
 get "signup" => "users#new", :as => "signup"
@@ -12,11 +18,11 @@ end
 resources :users
 resources :sessions
 
-root 'projects#index'
-
 get 'tags/:tag', to: 'projects#index', as: :tag
 
 get '/search', to: 'projects#search', as: 'search'
+
+
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
