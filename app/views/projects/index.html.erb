@@ -21,16 +21,17 @@
 <% @projects.each do |project| %>
   <div class="large-4 small-6 columns">
     <div class="panel">
-      <h5><%= link_to project.title, project_url(project) %></h5>
+      <h4><%= link_to project.title, project_url(project) %></h4>
       <div class="showcaseimg"><%= link_to (image_tag project.photo), project_url(project) %></br></br></div>
       <%= project.description %></br>
-      <h6>Goal: <strong>$<%= (project.goal_in_cents.to_f / 100).round %></strong></h6></br>
-      <%= (project.end_date - project.start_date).to_i %> Days Left</br>
-      Amount Raised So Far: $<%= ((project.pledges.sum(:amount_in_cents).to_f) /100).round %></br>
-      Funded: <%= ((project.pledges.sum(:amount_in_cents).to_f/project.goal_in_cents.to_f) *100).round %>%
+      <h6>Goal: <strong>$<%= (project.goal_in_cents.to_f / 100).round %></strong></h6>
+      <hr>
+      <strong><%= (project.end_date - project.start_date).to_i %></strong> Days Left</br>
+      Amount Raised So Far: <strong>$<%= ((project.pledges.sum(:amount_in_cents).to_f) /100).round %></strong></br>
+      Funded: <strong><%= ((project.pledges.sum(:amount_in_cents).to_f/project.goal_in_cents.to_f) *100).round %>%</strong>
       <br/>
       <br/>
-      <div class="progress small-9 success round">
+      <div class="progress small-12 success round">
         <span class="meter" style="width:<%= percentagechecker(project) %>%"></span>
       </div>
 
